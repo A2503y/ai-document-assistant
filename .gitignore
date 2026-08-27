@@ -1,0 +1,24 @@
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+.env
+.env.*
+!.env.example
+
+# Local document data: uploaded PDFs and the persistent vector store.
+data/
+backend/app/uploads/
+backend/app/db/
+chroma_db/
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.playwright-cli/

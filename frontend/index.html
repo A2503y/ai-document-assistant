@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Document Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div class="eyebrow"><span class="status-dot"></span> Grounded PDF search</div>
+        <h1>Ask your documents.<br /><em>Get cited answers.</em></h1>
+        <p>Upload PDFs, select the documents that matter, and get answers grounded in their actual contents.</p>
+      </header>
+
+      <div id="notice" class="notice" role="alert" hidden></div>
+
+      <section class="workspace">
+        <aside class="documents-panel panel">
+          <div class="panel-heading">
+            <div><p class="label">Knowledge base</p><h2>Your documents</h2></div>
+            <button id="refresh-button" class="icon-button" title="Refresh documents" aria-label="Refresh documents">↻</button>
+          </div>
+
+          <form id="upload-form" class="upload-zone">
+            <input id="file-input" class="file-input" type="file" accept="application/pdf,.pdf" required />
+            <label class="upload-picker" for="file-input">
+              <div class="upload-icon">↑</div>
+              <strong id="upload-title">Choose a PDF</strong>
+              <span id="upload-detail">Up to 15 MB</span>
+            </label>
+            <button id="upload-button" class="button secondary" type="submit">Upload PDF</button>
+          </form>
+
+          <div class="selection-row">
+            <span id="selection-status">All documents will be searched</span>
+            <button id="clear-selection" class="text-button" type="button" hidden>Clear</button>
+          </div>
+          <div id="document-list" class="document-list" aria-live="polite"></div>
+        </aside>
+
+        <section class="chat-panel panel">
+          <div class="panel-heading chat-heading">
+            <div><p class="label">Document Q&A</p><h2>What would you like to know?</h2></div>
+            <span id="document-count" class="count-badge">0 documents</span>
+          </div>
+
+          <div id="empty-state" class="empty-state">
+            <div class="empty-icon">✦</div>
+            <h3>Start with a document</h3>
+            <p>Upload a text-based PDF to create your local knowledge base.</p>
+          </div>
+
+          <div id="answer-area" class="answer-area" hidden aria-live="polite"></div>
+
+          <form id="ask-form" class="ask-form">
+            <label for="question-input" class="sr-only">Ask a question about your documents</label>
+            <textarea id="question-input" rows="3" maxlength="2000" placeholder="Ask a question about your documents…" required></textarea>
+            <div class="ask-footer">
+              <span>Answers include retrieved source excerpts.</span>
+              <button id="ask-button" class="button" type="submit">Ask question <span>→</span></button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
