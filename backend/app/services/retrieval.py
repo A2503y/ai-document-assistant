@@ -1,5 +1,5 @@
-from app.services.embedding_service import get_embedding_model
-from app.services.vectordb import get_collection
+from .embedding_service import get_embedding_model
+from .vectordb import get_collection
 
 
 def retrieve_chunks(

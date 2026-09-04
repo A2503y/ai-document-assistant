@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from app.config import settings
-from app.services.vectordb import delete_document, get_collection
+from ..config import settings
+from .vectordb import delete_document, get_collection
 
 
 def list_documents() -> list[dict]:

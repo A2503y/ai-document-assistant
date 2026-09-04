@@ -1,7 +1,7 @@
 import os
 
-from app.config import settings
-from app.prompts.grounded_answer import SYSTEM_PROMPT, build_user_prompt
+from ..config import settings
+from ..prompts.grounded_answer import SYSTEM_PROMPT, build_user_prompt
 
 
 class MissingAPIKeyError(RuntimeError):

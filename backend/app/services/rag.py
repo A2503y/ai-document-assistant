@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 
-from app.config import settings
-from app.services.llm import generate_grounded_answer
-from app.services.retrieval import retrieve_chunks
+from ..config import settings
+from .llm import generate_grounded_answer
+from .retrieval import retrieve_chunks
 
 
 class NoContextError(ValueError):

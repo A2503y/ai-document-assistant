@@ -6,13 +6,13 @@ import uuid
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
 
-from app.config import settings
-from app.models.document import Document
-from app.services.chunker import PageTextChunker
-from app.services.embedding import generate_embeddings
-from app.services.pdf_parser import PDFPage, PDFParsingError, extract_pages
-from app.services.preprocessor import normalize_text
-from app.services.vectordb import delete_document, document_exists, store_embeddings
+from ..config import settings
+from ..models.document import Document
+from ..services.chunker import PageTextChunker
+from ..services.embedding import generate_embeddings
+from ..services.pdf_parser import PDFPage, PDFParsingError, extract_pages
+from ..services.preprocessor import normalize_text
+from ..services.vectordb import delete_document, document_exists, store_embeddings
 
 
 router = APIRouter()

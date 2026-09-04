@@ -2,8 +2,8 @@ from functools import lru_cache
 
 import chromadb
 
-from app.config import settings
-from app.models.chunk import Chunk
+from ..config import settings
+from ..models.chunk import Chunk
 
 
 @lru_cache

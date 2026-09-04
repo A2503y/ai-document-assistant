@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Response
 from pydantic import BaseModel
 
-from app.services.document_service import list_documents, remove_document
+from ..services.document_service import list_documents, remove_document
 
 
 router = APIRouter()

@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from app.models.document import Document
-from app.models.metadata import ChunkMetadata
+from .document import Document
+from .metadata import ChunkMetadata
 
 
 @dataclass

@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from app.config import PROJECT_ROOT
+from .config import PROJECT_ROOT
 
 app = FastAPI(
     title="AI PDF ASSISTANT",
@@ -21,9 +21,9 @@ def root():
 def health_check():
     return {"status": "healthy"}
 
-from app.api.upload import router as upload_router
-from app.api.ask import router as ask_router
-from app.api.documents import router as documents_router
+from .api.upload import router as upload_router
+from .api.ask import router as ask_router
+from .api.documents import router as documents_router
 
 app.include_router(upload_router)
 app.include_router(ask_router)

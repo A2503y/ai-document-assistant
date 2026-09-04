@@ -1,9 +1,9 @@
 import uuid
 
-from app.models.chunk import Chunk
-from app.models.document import Document
-from app.models.metadata import ChunkMetadata
-from app.services.pdf_parser import PDFPage
+from ..models.chunk import Chunk
+from ..models.document import Document
+from ..models.metadata import ChunkMetadata
+from .pdf_parser import PDFPage
 
 
 class PageTextChunker:

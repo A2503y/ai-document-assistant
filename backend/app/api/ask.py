@@ -1,10 +1,10 @@
 from pydantic import BaseModel, Field, field_validator, model_validator
 from fastapi import APIRouter, HTTPException
 
-from app.config import settings
-from app.services.llm import LLMProviderError, MissingAPIKeyError
-from app.services.rag import NoContextError, answer_question
-from app.services.vectordb import indexed_document_ids
+from ..config import settings
+from ..services.llm import LLMProviderError, MissingAPIKeyError
+from ..services.rag import NoContextError, answer_question
+from ..services.vectordb import indexed_document_ids
 
 
 router = APIRouter()
